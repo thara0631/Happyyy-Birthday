@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    height: -webkit-fill-available;
+    overflow:hidden;
+}
+
+body{
+    background:#d9f2fb;
+}
+
+/* =========================
+   BOTH PAGES
+========================= */
+
+.page{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    overflow:hidden;
+
+    background-image:url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+#page1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    opacity:1;
+    transition:opacity .7s ease;
+}
+
+
+/* CAT IMAGE */
+
+.cat-small{
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    object-fit:contain to cover;
+    margin-top:-30px;
+    margin-bottom:30px;
+
+    animation:
+        catFloat 4s ease-in-out infinite,
+        catSoft 3s ease-in-out infinite;
+}
+
+
+/* CAT SLOW FLOAT */
+
+@keyframes catFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-1deg);
+    }
+
+    50%{
+        transform:translateY(-9px) rotate(1deg);
+    }
+
+}
+
+
+/* SOFT SHADOW */
+
+@keyframes catSoft{
+
+    0%,100%{
+        filter:
+        drop-shadow(
+            0 4px 7px rgba(70,110,130,.10)
+        );
+    }
+
+    50%{
+        filter:
+        drop-shadow(
+            0 9px 13px rgba(70,110,130,.18)
+        );
+    }
+
+}
+
+
+/* PAGE 1 TEXT */
+
+.page1-title{
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size:29px;
+
+    color:#333;
+
+    line-height:1.35;
+
+    padding:0 20px;
+
+    animation:titleFloat 3.5s ease-in-out infinite;
+}
+
+
+/* HEART + GIFT */
+
+.page1-symbols{
+
+    margin-top:13px;
+
+    font-size:27px;
+
+    letter-spacing:8px;
+
+    animation:
+        symbolFloat 3.5s ease-in-out infinite;
+}
+
+
+@keyframes titleFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+
+@keyframes symbolFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-3px);
+    }
+
+}
+
+
+/* =========================
+   PAGE 2
+========================= */
+
+#page2{
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+  
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:opacity .7s ease;
+
+    padding-top:0px;
+  
+  
+}
+
+
+/* PAGE 2 TOP TEXT */
+
+.page2-title{
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-weight:bold;
+
+    font-size:35px;
+
+    line-height:1.45;
+
+    letter-spacing:1px;
+
+    color:#222;
+
+    padding:0 20px;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.decor{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:22px;
+
+    opacity:.9;
+
+    animation:
+        decorFloat 4s ease-in-out infinite;
+
+    pointer-events:none;
+}
+
+
+.star1{
+    left:13%;
+    top:18%;
+    animation-delay:.2s;
+}
+
+.star2{
+    right:12%;
+    top:21%;
+    font-size:18px;
+    animation-delay:1s;
+}
+
+.star3{
+    left:19%;
+    top:48%;
+    font-size:16px;
+    animation-delay:1.7s;
+}
+
+.star4{
+    right:17%;
+    top:47%;
+    font-size:21px;
+    animation-delay:.8s;
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart-decor{
+
+    position:absolute;
+
+    color:#f4869c;
+
+    font-size:24px;
+
+    opacity:.8;
+
+    animation:
+        decorFloat 3.7s ease-in-out infinite;
+}
+
+
+.heart1{
+    left:10%;
+    top:34%;
+}
+
+.heart2{
+    right:9%;
+    top:36%;
+    animation-delay:1.2s;
+}
+
+.heart3{
+    left:23%;
+    top:59%;
+    font-size:17px;
+    animation-delay:.5s;
+}
+
+.heart4{
+    right:22%;
+    top:60%;
+    font-size:17px;
+    animation-delay:1.5s;
+}
+
+
+@keyframes decorFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-7px)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =========================
+   CAT CIRCLE
+========================= */
+
+.picture-circle{
+
+    position:relative;
+
+    width:190px;
+    height:190px;
+
+    margin-top:15px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:
+        5px solid
+        rgba(255,255,255,.88);
+
+    background:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(70,120,145,.20),
+
+        0 0 0 8px
+        rgba(255,255,255,.22);
+
+    animation:
+        pictureFloat 4.5s ease-in-out infinite;
+}
+
+
+.picture-circle img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+@keyframes pictureFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+
+}
+
+
+/* =========================
+   PASSCODE
+========================= */
+
+.pass-title{
+
+    margin-top:15px;
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
+
+    font-size:24px;
+
+    color:#333;
+}
+
+
+/* PASSCODE DOTS */
+
+.dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:13px;
+
+    height:15px;
+
+    margin-top:13px;
+}
+
+
+.dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    border:
+        1.5px solid #555;
+
+    background:transparent;
+
+    transition:.2s ease;
+}
+
+
+.dot.filled{
+
+    background:#555;
+}
+
+
+/* =========================
+   KEYPAD
+========================= */
+
+.keypad{
+
+    width:225px;
+
+    margin-top:17px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    transition:
+        transform .15s ease;
+}
+
+
+.key{
+
+    height:49px;
+
+    border:0;
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+
+        0 5px 12px
+        rgba(70,120,145,.13),
+
+        inset 0 1px 2px
+        rgba(255,255,255,.9);
+
+    font-family:'Times New Roman', Times, serif,sans-serif;
+
+    font-size:20px;
+
+    color:#444;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .2s ease,
+
+        background .2s ease;
+}
+
+
+.key:active{
+
+    transform:scale(.91);
+
+    background:
+        rgba(255,255,255,.96);
+}
+
+
+/* =========================
+   WRONG CODE SHAKE
+========================= */
+
+.keypad.shake{
+
+    animation:
+        smoothShake .75s ease-in-out;
+}
+
+
+@keyframes smoothShake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    15%{
+        transform:translateX(-9px);
+    }
+
+    30%{
+        transform:translateX(8px);
+    }
+
+    45%{
+        transform:translateX(-6px);
+    }
+
+    60%{
+        transform:translateX(5px);
+    }
+
+    75%{
+        transform:translateX(-3px);
+    }
+
+    90%{
+        transform:translateX(2px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+
+/* =========================
+   TRY AGAIN
+========================= */
+
+.try-again{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:0%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.92);
+
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        Times new 'Times New Roman', Times, serif;
+
+    font-size:15px;
+
+    color:#333;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    filter:blur(8px);
+
+    pointer-events:none;
+
+    z-index:100;
+}
+
+
+.try-again.show{
+
+    animation:
+        tryAgain 1s ease forwards;
+}
+
+
+@keyframes tryAgain{
+
+    0%{
+
+        opacity:0;
+
+        filter:blur(8px);
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+    }
+
+    30%{
+
+        opacity:1;
+
+        filter:blur(0);
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    65%{
+
+        opacity:1;
+
+        filter:blur(0);
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    100%{
+
+        opacity:0;
+
+        filter:blur(8px);
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.05);
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:390px){
+
+    #page2{
+        padding-top:0px;
+    }
+
+    .page2-title{
+        font-size:19px;
+    }
+
+    .picture-circle{
+
+        width:170px;
+
+        height:170px;
+
+        margin-top:20px;
+    }
+
+    .pass-title{
+
+        margin-top:17px;
+
+        font-size:22px;
+    }
+
+    .keypad{
+
+        width:215px;
+
+        gap:8px;
+
+        margin-top:14px;
+    }
+
+    .key{
+        height:46px;
+    }
+
+}
+
+
+/* SHORT SCREENS */
+
+@media(max-height:700px){
+
+    #page2{
+        padding-top:0px;
+    }
+
+    .picture-circle{
+
+        width:145px;
+
+        height:145px;
+
+        margin-top:12px;
+    }
+
+    .pass-title{
+        margin-top:12px;
+    }
+
+    .keypad{
+
+        margin-top:10px;
+
+        gap:7px;
+    }
+
+    .key{
+        height:43px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     PAGE 1
+================================================== -->
+
+<section id="page1" class="page">
+
+
+    <!-- SMALL CAT -->
+
+    <img
+        src="cat.jpg"
+        class="cat-small"
+        alt="cute cat"
+    >
+
+
+    <!-- TITLE -->
+
+    <div class="page1-title">
+
+    Wrapping Your Birthday Surprise 🤍🎀🎁
+
+    </div>
+
+
+    <!-- SYMBOLS -->
+
+    <div class="page1-symbols">
+   
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PAGE 2
+================================================== -->
+
+<section id="page2" class="page">
+
+
+    <!-- TOP HEADING -->
+
+    <div class="page2-title">
+      
+      HOLD ON!!!<br>
+        UNLOCK YOUR SURPRISE<br>
+      🫶🏻
+
+    </div>
+
+
+    <!-- STARS -->
+
+    <div class="decor star1">
+        ✦
+    </div>
+
+    <div class="decor star2">
+        ✧
+    </div>
+
+    <div class="decor star3">
+        ✦
+    </div>
+
+    <div class="decor star4">
+        ✧
+    </div>
+
+
+    <!-- HEARTS -->
+
+    <div class="heart-decor heart1">
+        ♡
+    </div>
+
+    <div class="heart-decor heart2">
+        ♡
+    </div>
+
+    <div class="heart-decor heart3">
+        ♡
+    </div>
+
+    <div class="heart-decor heart4">
+        ♡
+    </div>
+
+
+    <!-- CAT IMAGE INSIDE CIRCLE -->
+
+    <div class="picture-circle">
+
+        <img
+            src="cat_circle.jpg"
+            alt="cute cat with flowers"
+        >
+
+    </div>
+
+
+    <!-- PASSCODE TEXT -->
+
+    <div class="pass-title">
+
+        Enter a passcode
+
+    </div>
+
+
+    <!-- PASSCODE DOTS -->
+
+    <div class="dots">
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+
+    </div>
+
+
+    <!-- KEYPAD -->
+
+    <div
+        class="keypad"
+        id="keypad"
+    >
+
+
+        <button
+            class="key"
+            onclick="pressKey('1')"
+        >
+            1
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('2')"
+        >
+            2
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('3')"
+        >
+            3
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('4')"
+        >
+            4
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('5')"
+        >
+            5
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('6')"
+        >
+            6
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('7')"
+        >
+            7
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('8')"
+        >
+            8
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('9')"
+        >
+            9
+        </button>
+
+
+        <button
+            class="key"
+            onclick="deleteKey()"
+        >
+            ⌫
+        </button>
+
+
+        <button
+            class="key"
+            onclick="pressKey('0')"
+        >
+            0
+        </button>
+
+
+        <button
+            class="key"
+            onclick="checkCode()"
+        >
+            ✓
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- WRONG PASSWORD MESSAGE -->
+
+<div
+    class="try-again"
+    id="tryAgain"
+>
+    Try again
+</div>
+
+
+
+<script>
+
+
+/* ==================================================
+   PAGE 1 → PAGE 2
+   EXACTLY 3 SECONDS
+================================================== */
+
+const page1 =
+    document.getElementById("page1");
+
+const page2 =
+    document.getElementById("page2");
+
+
+setTimeout(function(){
+
+    page1.style.opacity = "0";
+
+
+    setTimeout(function(){
+
+        page1.style.display = "none";
+
+        page2.style.display = "flex";
+
+
+        requestAnimationFrame(function(){
+
+            page2.style.opacity = "1";
+
+        });
+
+    },700);
+
+
+},3000);
+
+
+
+/* ==================================================
+   PASSCODE
+================================================== */
+
+let enteredCode = "";
+
+
+const correctCode = "0631";
+
+
+const dots =
+    document.querySelectorAll(".dot");
+
+
+const keypad =
+    document.getElementById("keypad");
+
+
+const tryAgain =
+    document.getElementById("tryAgain");
+
+
+
+/* NUMBER BUTTON */
+
+function pressKey(number){
+
+
+    if(enteredCode.length >= 4){
+
+        return;
+
+    }
+
+
+    enteredCode += number;
+
+
+    updateDots();
+
+}
+
+
+
+/* UPDATE DOTS */
+
+function updateDots(){
+
+
+    dots.forEach(function(dot,index){
+
+
+        if(index < enteredCode.length){
+
+            dot.classList.add("filled");
+
+        }
+
+        else{
+
+            dot.classList.remove("filled");
+
+        }
+
+
+    });
+
+}
+
+
+
+/* DELETE BUTTON */
+
+function deleteKey(){
+
+
+    if(enteredCode.length > 0){
+
+
+        enteredCode =
+            enteredCode.slice(0,-1);
+
+
+        updateDots();
+
+
+    }
+
+}
+
+
+
+/* CHECK PASSWORD */
+
+function checkCode(){
+
+
+    /* Don't do anything until 4 digits */
+
+    if(enteredCode.length !== 4){
+
+        return;
+
+    }
+
+
+
+    /* =========================
+       CORRECT PASSWORD
+    ========================= */
+
+    if(enteredCode === correctCode){
+
+
+        setTimeout(function(){
+
+
+            /*
+             * Your next page will be
+             * page3.html
+             */
+
+            window.location.href =
+                "page3.html";
+
+
+        },300);
+
+
+        return;
+
+    }
+
+
+
+    /* =========================
+       WRONG PASSWORD
+    ========================= */
+
+
+    /* Restart shake animation */
+
+    keypad.classList.remove("shake");
+
+    void keypad.offsetWidth;
+
+    keypad.classList.add("shake");
+
+
+
+    /* Show Try Again */
+
+    tryAgain.classList.remove("show");
+
+    void tryAgain.offsetWidth;
+
+    tryAgain.classList.add("show");
+
+
+
+    /* Automatically clear digits */
+
+    setTimeout(function(){
+
+
+        enteredCode = "";
+
+        updateDots();
+
+
+    },300);
+
+
+
+    /* Stop keypad shake */
+
+    setTimeout(function(){
+
+
+        keypad.classList.remove("shake");
+
+
+    },800);
+
+}
+
+
+
+/* Remove Try Again after 1 second */
+
+tryAgain.addEventListener(
+    "animationend",
+    function(){
+
+        tryAgain.classList.remove("show");
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You 🤌🏻🤍</title>
+
+<style>
+     @page {
+    size: 108mm 192mm;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f5d6dc;
+}
+
+.letter {
+    width: 95mm;
+    min-height: 192mm;
+    margin: auto;
+    padding: 18mm 12mm;
+
+    background-image:
+        linear-gradient(
+            rgba(255,250,245,0.75),
+            rgba(255,250,245,0.75)
+        ),
+        url("letter_background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: #3d3030;
+}
+
+.cat {
+    display: block;
+    width: 130px;
+    max-width: 70%;
+    margin: 0 auto 12px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #b30059;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-line;
+}
+
+
+.reminder {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(235, 221, 231, 0.8196078431372549);
+}
+
+.reminder h2 {
+    text-align: center;
+    color: #640735e9;
+    font-size: 21px;
+}
+.tap-container{
+    text-align:center;
+    margin-top:15px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+
+.tap-button{
+    border:none;
+    padding:8px 25px;
+    border-radius:20px;
+    background:#f56a88;
+    color:white;
+    font-family:Georgia, serif;
+    font-size:18px;
+    cursor:pointer;
+  }
+  
+  #reminder{
+    display:none;
+    min-height:100vh;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+
+    background-image:url("letter_background.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.reminder-box{
+    width:85%;
+    max-width:320px;
+    padding:20px 15px;
+    border-radius:22px;
+    height:fit-content;
+    background:rgba(255,255,255,.85);
+}
+
+.reminder-title{
+    font-size:25px;
+    color:#b30059;
+    margin-top:5%;
+    margin-bottom:9px;
+}
+
+.reminder-message{
+    font-size:20px;
+    line-height:1.4;
+    color:#3d3030;
+    white-space:pre-line;
+}
+
+.back-button{
+    margin-top:30px;
+    padding:10px 27px;
+    border:none;
+    border-radius:25px;
+    background:#f5d6dc;
+    font-size:17px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+
+    <!-- Cat image -->
+    <img src="cat_envelope.jpg" class="cat">
+
+    <h1>Happy Birthday Kannaa😚🤍</h1>
+
+    <div class="message">
+
+Happiest Birthday To The Most Important Person In My Life 🤍🤌🏻
+
+No Matter What Happens Or How Life Changes , Your Place In My Life Will Always Remains Constant.
+No One Can Ever Take Your Place Or Be You To Me.
+
+When I Think About Us , The Small Moments We've Shared Together , They Always Brings A Smile To My Face. No Matter How Simple It Was , That Memories Will Always Keep Close To My Heart.
+
+And Ofcourse , How Can I Forget Our Legendary Sunbath!?😹😹 Still Wondering How That Even Became A Memory Of Ours!!!
+
+And I Can Never Forget That B'day Surpise.
+Maybe For You It Was Just A Simple Surprise , But For Me Knowing That You Had Actually Thought About Me And Wanted To Make Me Happy , It Meant So Much.
+I Felt Seen And Made It Really Special. And Thankyou For 'COCO'.🐰🥹
+
+      I Don't Know If I've Ever Said This Properly,
+But When It Comes To You , I've Always Wanted To Give My Best.
+
+I Love Making You Smile , Making You Feel Special , Pampering You And Be There For You In Every Way I Can.
+Maybe I Don't Always Say It...But Your Happiness Has Always Mattered To Me So Much.
+
+Maybe There Will Be A Time When We Won't Talk , Fight , Misunderstand Each Other , Or Just Have Our Egos In Between.
+But Whatever Happens , If You Ever Feel Sad Or Alone , I Just Want To Let You Know, Just Come To Me.
+I'll Always Be Here For You And I'll Always Choose You Over Any Fight Or Ego.
+
+      And One More Thing… Whenever You Feel Sad , Lonely Or Unwanted , Like You Don’t Really Matter In This World. Take This Letter Out And Read It Again , Okay? 😇
+
+I Hope It’ll Remind You That You’re Someone’s Favourite Person , You Have Someone Who'll Always Be Proud Of You , Choose You , Care About You , And Love Having You In Their Life.
+
+Maybe You Wonder Like , “I’m Not Even That Special , Why She Do All This For Mee?” Or "Do You Ever Feel Like I Do Too Much For You!?"
+
+I've An Answer For That Questions Too🤭🫣..
+Just Know That From My Side , None Of It Ever Felt Like Too Much.
+Choosing You Never Felt Like An Effort , It's Just Something I Naturally Wanted To Do.
+Actually You're Special And You’re Important To Me , And You Deserve To Be Treated That Way. Don't Think Too Much Okay!?😾
+
+Once Again , Happy Birthday Kannaa!! I Miss You A Little More Today And I Wish I Could See You Soon.☺️
+
+<div class="tap-container">
+    <button class="tap-button" onclick="showReminder()">
+        Tap
+    </button>
+  
+</div>
+      
+    </div>
+  
+</div>
+<section id="reminder">
+
+    <div class="reminder-box">
+
+        <div class="reminder-title">
+            REMINDER🫴🏻💌
+        </div>
+
+        <div class="reminder-message">
+          
+You Don't Know How Much You Mean To Me.
+        
+          ~ Love You 🤍
+        </div>
+
+        <button class="back-button" onclick="backToLetter()">
+            ← Back
+        </button>
+
+    </div>
+
+</section>
+      </div>
+
+</div>
+
+
+<script>
+
+function showReminder(){
+
+    document.querySelector(".letter").style.display = "none";
+    document.getElementById("reminder").style.display = "flex";
+
+    window.scrollTo(0,0);
+}
+
+function backToLetter(){
+
+    document.getElementById("reminder").style.display = "none";
+    document.querySelector(".letter").style.display = "block";
+
+    window.scrollTo(0,0);
+}
+
+</script>
+
+
+</body>
+</html>
